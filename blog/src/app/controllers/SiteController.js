@@ -1,14 +1,28 @@
 class SiteController {
-    index(req, res) { // '/' là router : tuyến đường
-        res.render('home')
-      }
-      test(req, res) { // '/' là router : tuyến đường
-        res.render('test')
-      }
-      search(req, res) { // '/' là router : tuyến đường
-        res.render('search')
-      }
-     
-   }
+  index(req,res) {
+    res.render('home')
+  }
+  search(req,res) {
    
-   module.exports = new SiteController
+    const test =  req.body //body để bắt value
+    const timkiem = test.timkiem
+    console.log(test)   
+    if(timkiem == 'home' ){
+      res.render('home')
+   
+    }
+    if(timkiem == 'lanh ngu' ){
+      res.render('test')
+   
+    }
+    if (timkiem == 'news' ){
+      res.render('news')
+    }
+    else{
+      res.render('search')
+    }
+  }
+  
+}
+
+module.exports = new SiteController

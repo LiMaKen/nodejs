@@ -7,7 +7,7 @@ const port = 3000
 const route = require('./routes')
 app.use(express.static(path.join(__dirname,'public')))
 // http log
-app.use(morgan('combined'))
+//app.use(morgan('combined'))
 //template
 app.engine('hbs',handlebars.engine({
   extname: '.hbs'
