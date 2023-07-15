@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const siteController = require('../app/controllers/SiteController')
+const siteController = require('../app/controllers/SiteController.js')
 
-
-//newsController.index
 router.use('/search',siteController.search)
-router.use('/test',siteController.test)
 router.use('/',siteController.index)
 
 
