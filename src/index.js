@@ -5,6 +5,10 @@ const handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
 const route = require('./routes');
+const db = require('./config/db');
+//connect to db
+db.connect();
+
 app.use(express.static(path.join(__dirname, 'public')));
 // http log
 //app.use(morgan('combined'))
@@ -15,6 +19,7 @@ app.engine(
         extname: '.hbs',
     }),
 );
+
 // bắt value của post
 app.use(express.json());
 app.use(express.urlencoded());
