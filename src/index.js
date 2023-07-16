@@ -21,8 +21,8 @@ app.engine(
 );
 
 // bắt value của post
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.json())
+app.use(express.urlencoded())
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resource/views')); // teamlate views địa chỉ đến file

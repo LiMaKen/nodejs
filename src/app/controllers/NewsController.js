@@ -2,14 +2,16 @@ const New = require('../models/new');
 class NewsController {
     index(req, res) {
         New.find({})
-            .then((news) => res.json(news))
+            .then((news) => {
+                const test = res.json(news);
+                return test
+            })
             .catch(() => {
                 res.status(400).json({ error: 'ERROR!!!' });
             });
-        // res.json({
-        //     name:"test"
-        // })
+     
     }
+    
     show(req, res) {
         res.send('alo');
     }
